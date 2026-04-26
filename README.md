@@ -22,15 +22,7 @@
 
 ---
 
-## 📸 Screenshots
 
-| Dark Mode | Light Mode |
-|:---------:|:----------:|
-| ![Dark Mode](https://via.placeholder.com/480x300/0b0f1a/22d3ee?text=BitCut+Dark+Mode) | ![Light Mode](https://via.placeholder.com/480x300/F8FAFC/1e40af?text=BitCut+Light+Mode) |
-
-> Replace these placeholders with actual screenshots of your running app.
-
----
 
 ## ✨ Key Features
 
@@ -50,41 +42,41 @@
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                      CLIENT (React)                      │
-│                                                          │
+│                      CLIENT (React)                     │
+│                                                         │
 │  ┌──────────┐  ┌──────────────┐  ┌───────────────────┐  │
-│  │  Navbar   │  │  Hero + Form  │  │   Result Card     │  │
-│  │  (Theme)  │  │  (URL Input)  │  │   (Copy Button)   │  │
+│  │  Navbar  │  │  Hero + Form │  │   Result Card     │  │
+│  │  (Theme) │  │  (URL Input) │  │   (Copy Button)   │  │
 │  └──────────┘  └──────┬───────┘  └───────────────────┘  │
-│                       │                                   │
-│                  POST /api/shorten                        │
-└───────────────────────┼──────────────────────────────────┘
-                        │
-                        ▼
+│                       │                                 │
+│                  POST /api/shorten                      │
+└──────────────────────────┼──────────────────────────────┘
+                           │
+                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│                    SERVER (Express.js)                    │
-│                                                          │
+│                    SERVER (Express.js)                  │
+│                                                         │
 │  ┌────────────────┐  ┌─────────────┐  ┌──────────────┐  │
 │  │ POST /api/     │  │ GET /:code  │  │  Security    │  │
-│  │   shorten      │  │ (Redirect)  │  │  Middleware   │  │
+│  │   shorten      │  │ (Redirect)  │  │  Middleware  │  │
 │  │                │  │             │  │              │  │
 │  │ • Validate URL │  │ • Lookup DB │  │ • Helmet     │  │
 │  │ • Generate ID  │  │ • Track     │  │ • Rate Limit │  │
 │  │ • Store in DB  │  │   clicks    │  │ • CORS       │  │
 │  │ • Return code  │  │ • 302       │  │ • Validation │  │
 │  └───────┬────────┘  └──────┬──────┘  └──────────────┘  │
-│          │                  │                             │
-│          └──────────┬───────┘                             │
-│                     ▼                                     │
-│          ┌──────────────────┐                             │
-│          │   SQLite (urls.db) │                            │
-│          │                    │                            │
-│          │ • id (PK)          │                            │
-│          │ • original_url     │                            │
-│          │ • short_code (UQ)  │                            │
-│          │ • clicks           │                            │
-│          │ • created_at       │                            │
-│          └──────────────────┘                             │
+│          │                  │                           │
+│          └──────────┬───────┘                           │
+│                     ▼                                   │
+│          ┌────────────────────┐                         │
+│          │   SQLite (urls.db) │                         │
+│          │                    │                         │
+│          │ • id (PK)          │                         │
+│          │ • original_url     │                         │
+│          │ • short_code (UQ)  │                         │
+│          │ • clicks           │                         │
+│          │ • created_at       │                         │
+│          └────────────────────┘                          │
 └─────────────────────────────────────────────────────────┘
 ```
 
