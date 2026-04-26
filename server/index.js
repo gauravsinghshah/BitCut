@@ -22,7 +22,7 @@ app.use(helmet({
 
 // ── CORS — restrict in production ──────────────────────────────
 const allowedOrigins = isProduction
-  ? [process.env.FRONTEND_URL || `http://localhost:${PORT}`]
+  ? ['https://bit-cut.vercel.app', 'http://localhost:5173']
   : ['http://localhost:5173', 'http://localhost:3001', 'http://127.0.0.1:5173'];
 
 app.use(cors({
