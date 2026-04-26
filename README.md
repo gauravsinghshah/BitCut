@@ -16,7 +16,9 @@
 
 <br/>
 
-<img src="https://img.shields.io/badge/⚡_Live_Demo-Coming_Soon-0891b2?style=for-the-badge" alt="Live Demo"/>
+<a href="https://bit-cut.vercel.app">
+  ⚡ Live Demo
+</a>
 
 </div>
 
@@ -76,7 +78,7 @@
 │          │ • short_code (UQ)  │                         │
 │          │ • clicks           │                         │
 │          │ • created_at       │                         │
-│          └────────────────────┘                          │
+│          └────────────────────┘                         │
 └─────────────────────────────────────────────────────────┘
 ```
 
