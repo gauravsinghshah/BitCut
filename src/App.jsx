@@ -254,10 +254,12 @@ function App() {
   // In dev, Vite runs on 5173 and Express on 3001 — redirects only work on Express
   // In production, both are served from the same origin
   const isDev = typeof window !== 'undefined' && window.location.port === '5173'
-  const BACKEND_URL = isDev ? 'http://localhost:3001' : (typeof window !== 'undefined' ? window.location.origin : '')
+  const BACKEND_URL = isDev
+  ? 'http://localhost:3001'
+  : 'https://bitcut-backend.onrender.com'
 
   useEffect(() => {
-    fetch('/api/stats')
+    fetch(`${BACKEND_URL}/api/stats`)
       .then(res => res.json())
       .then(data => {
         setStats({ visitors: data.siteVisits || 0, links: data.totalLinks || 0 })
@@ -302,7 +304,7 @@ function App() {
 
     setLoading(true)
     try {
-      const res = await fetch('/api/shorten', {
+      const res = await fetch(`${BACKEND_URL}/api/shorten`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: finalUrl }),
