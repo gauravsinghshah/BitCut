@@ -521,7 +521,7 @@ function App() {
         {result && <ResultCard result={result} backendUrl={BACKEND_URL} />}
 
         {/* Global Live Stats */}
-        <div style={{
+        {/* <div style={{
           display: 'flex',
           gap: '32px',
           marginTop: '40px',
@@ -556,7 +556,7 @@ function App() {
             <Link size={18} style={{ color: 'var(--blue-500)' }} />
             <span>{stats.links.toLocaleString()} <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>Links</span></span>
           </div>
-        </div>
+        </div> */}
 
         {/* Developer credit */}
         <div style={{
